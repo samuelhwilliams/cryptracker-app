@@ -1,0 +1,153 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#09C"
+    android:padding="@dimen/widget_margin">
+
+    <LinearLayout
+        android:id="@+id/widget_layout_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_row1_source"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="Bitcoin" />
+
+            <TextView
+                android:id="@+id/widget_row1_amount"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="£1,000,000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_row2_source"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="Bitcoin" />
+
+            <TextView
+                android:id="@+id/widget_row2_amount"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="£1,000,000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_row3_source"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="Bitcoin" />
+
+            <TextView
+                android:id="@+id/widget_row3_amount"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="£1,000,000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_row4_source"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="Bitcoin" />
+
+            <TextView
+                android:id="@+id/widget_row4_amount"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="£1,000,000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_row5_source"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="Bitcoin" />
+
+            <TextView
+                android:id="@+id/widget_row5_amount"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="£1,000,000" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_row6_source"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="Bitcoin" />
+
+            <TextView
+                android:id="@+id/widget_row6_amount"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.50"
+                android:gravity="left|center_vertical"
+                android:text="£1,000,000" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
