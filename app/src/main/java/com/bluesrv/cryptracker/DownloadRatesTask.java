@@ -43,7 +43,6 @@ class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
     private RemoteViews views;
     private Map<String, ?> widgetText;
     private String prefix;
-    private Integer row;
 
     DownloadRatesTask(Context context, AppWidgetManager appWidgetManager, int appWidgetId, RemoteViews views, Map<String, ?> widgetText) {
         this.context = context;
@@ -97,12 +96,12 @@ class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
                 coinRate = new HashMap<String, Object>();
                 coinRate.put("coins", rootobj.get(sourceCryptocurrencyName.toLowerCase()).getAsString());
                 coinRate.put("value", rootobj.get(targetCurrencyIdent.toLowerCase()).getAsFloat());
+                coinRate.put("source", sourceCryptocurrencyName);
                 coinRate.put("target", targetCurrencyIdent);
                 coinRate.put("change", ((Float) coinRate.get("value")) - pricePaid);
 
                 Log.d(TAG, "doInBackground1: " + sourceCryptocurrencyName + ", " + root.getAsJsonObject().get(sourceCryptocurrencyName).getAsString());
 
-                this.row = i;
                 publishProgress(coinRate);
                 try {
                     Thread.sleep(250);
@@ -115,6 +114,14 @@ class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
                 Log.e(TAG, "doInBackground: MalformedURLException " + e.toString());
             } catch (IOException e) {
                 Log.e(TAG, "doInBackground: IOException " + e.toString());
+
+                coinRate = new HashMap<String, Object>();
+                coinRate.put("coins", "0.00");
+                coinRate.put("value", 0.0f);
+                coinRate.put("source", sourceCryptocurrencyName);
+                coinRate.put("target", targetCurrencyIdent);
+                coinRate.put("change", 0.0f);
+                publishProgress(coinRate);
             }
 
             if (isCancelled()) break;
@@ -130,7 +137,7 @@ class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
         nf.setCurrency(Currency.getInstance((String) result[0].get("target")));
 
         RemoteViews widgetRow = new RemoteViews(context.getPackageName(), R.layout.widget_row);
-        widgetRow.setTextViewText(R.id.widget_row_source, ((String) result[0].get("coins")) + " " + (String) widgetText.get(prefix + "_" + this.row.toString() + "_source"));
+        widgetRow.setTextViewText(R.id.widget_row_source, ((String) result[0].get("coins")) + " " + result[0].get("source"));
         widgetRow.setTextViewText(R.id.widget_row_value, nf.format(result[0].get("value")));
         widgetRow.setTextViewText(R.id.widget_row_change, "(" + (String) nf.format(result[0].get("change")) + ")");
 
