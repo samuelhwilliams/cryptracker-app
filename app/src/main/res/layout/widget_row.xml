@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="4dp">
+
+    <TextView
+        android:id="@+id/widget_row_source"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:gravity="end|center_vertical"/>
+
+    <TextView
+        android:id="@+id/widget_row_value"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="end|center_vertical" />
+
+    <TextView
+        android:id="@+id/widget_row_change"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_marginLeft="5dp"
+        android:gravity="start|center_vertical" />
+
+</LinearLayout>

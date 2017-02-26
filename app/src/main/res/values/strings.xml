@@ -1,30 +1,40 @@
 <resources>
     <string name="app_name">Cryptracker</string>
-    <string name="appwidget_text">EXAMPLE</string>
     <string name="configure">Configure</string>
     <string name="add_widget">Add widget</string>
 
-    <string name="row1_source">Bitcoin</string>
+    <string name="header_crypto">Cryptocurrency</string>
+    <string name="header_amount">Amount</string>
+    <string name="header_paid">Purchase Price</string>
+    <string name="lbl_fiat_currency">Fiat Currency</string>
+
+    <string name="row1_source">BTC</string>
     <string name="row1_amount">0.09</string>
-    <string name="row1_target">GBP</string>
+    <string name="row1_paid">50.00</string>
 
-    <string name="row2_source">Litecoin</string>
+    <string name="row2_source">LTC</string>
     <string name="row2_amount">12.56</string>
-    <string name="row2_target">GBP</string>
+    <string name="row2_paid">50.00</string>
 
-    <string name="row3_source">Ethereum</string>
+    <string name="row3_source">ETH</string>
     <string name="row3_amount">5</string>
-    <string name="row3_target">GBP</string>
+    <string name="row3_paid">50.00</string>
 
-    <string name="row4_source">Monero</string>
+    <string name="row4_source">XMR</string>
     <string name="row4_amount">30.54</string>
-    <string name="row4_target">GBP</string>
+    <string name="row4_paid">50.00</string>
 
-    <string name="row5_source">Ripple</string>
+    <string name="row5_source">XRP</string>
     <string name="row5_amount">21019.62</string>
-    <string name="row5_target">GBP</string>
+    <string name="row5_paid">50.00</string>
 
-    <string name="row6_source">Dash</string>
+    <string name="row6_source">DASH</string>
     <string name="row6_amount">3.7</string>
-    <string name="row6_target">GBP</string>
+    <string name="row6_paid">50.00</string>
+
+    <string-array name="supported_fiat_currencies">
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>USD</item>
+    </string-array>
 </resources>

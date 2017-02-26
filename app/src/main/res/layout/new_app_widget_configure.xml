@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Crypto Currency" />
+                android:text="@string/header_crypto" />
 
             <TextView
                 android:id="@+id/header_amount"
@@ -29,15 +29,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Amount" />
+                android:text="@string/header_amount" />
 
             <TextView
-                android:id="@+id/header_target"
+                android:id="@+id/header_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal"
-                android:text="Target Currency" />
+                android:text="@string/header_paid" />
         </TableRow>
 
         <TableRow
@@ -62,17 +62,18 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="numberDecimal"
-                android:text="@string/row1_amount" />
+                android:text="@string/row1_amount"
+                android:autoText="false" />
 
             <EditText
-                android:id="@+id/row1_target"
+                android:id="@+id/row1_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="right|center_vertical"
-                android:inputType="text|textCapCharacters|textNoSuggestions"
-                android:text="@string/row1_target" />
+                android:text="@string/row1_paid"
+                android:inputType="numberDecimal" />
         </TableRow>
 
         <TableRow
@@ -100,14 +101,14 @@
                 android:text="@string/row2_amount" />
 
             <EditText
-                android:id="@+id/row2_target"
+                android:id="@+id/row2_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="right|center_vertical"
-                android:inputType="text|textCapCharacters|textNoSuggestions"
-                android:text="@string/row2_target" />
+                android:text="@string/row2_paid"
+                android:inputType="numberDecimal" />
         </TableRow>
 
         <TableRow
@@ -135,14 +136,14 @@
                 android:text="@string/row3_amount" />
 
             <EditText
-                android:id="@+id/row3_target"
+                android:id="@+id/row3_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="right|center_vertical"
-                android:inputType="text|textCapCharacters|textNoSuggestions"
-                android:text="@string/row3_target" />
+                android:text="@string/row3_paid"
+                android:inputType="numberDecimal" />
         </TableRow>
 
         <TableRow
@@ -170,14 +171,14 @@
                 android:text="@string/row4_amount" />
 
             <EditText
-                android:id="@+id/row4_target"
+                android:id="@+id/row4_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="right|center_vertical"
-                android:inputType="text|textCapCharacters|textNoSuggestions"
-                android:text="@string/row4_target" />
+                android:text="@string/row4_paid"
+                android:inputType="numberDecimal" />
         </TableRow>
 
         <TableRow
@@ -205,14 +206,14 @@
                 android:text="@string/row5_amount" />
 
             <EditText
-                android:id="@+id/row5_target"
+                android:id="@+id/row5_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="right|center_vertical"
-                android:inputType="text|textCapCharacters|textNoSuggestions"
-                android:text="@string/row5_target" />
+                android:text="@string/row5_paid"
+                android:inputType="numberDecimal" />
         </TableRow>
 
         <TableRow
@@ -240,20 +241,46 @@
                 android:text="@string/row6_amount" />
 
             <EditText
-                android:id="@+id/row6_target"
+                android:id="@+id/row6_paid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="right|center_vertical"
-                android:inputType="text|textCapCharacters|textNoSuggestions"
-                android:text="@string/row6_target" />
+                android:text="@string/row6_paid"
+                android:inputType="numberDecimal" />
         </TableRow>
     </TableLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:paddingTop="20sp">
+
+        <TextView
+            android:text="@string/lbl_fiat_currency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textStyle="normal|bold"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_fiat_currencies"
+            android:addStatesFromChildren="false"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/add_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/add_widget" />
