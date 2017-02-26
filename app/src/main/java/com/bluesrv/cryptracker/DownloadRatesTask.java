@@ -32,11 +32,6 @@ import static android.content.ContentValues.TAG;
  */
 
 class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
-    private final static String CRYPTO_CONVERT_BASE_URL = "";
-    private final static String API_PARAM_SOURCE = "source";
-    private final static String API_PARAM_AMOUNT = "amount";
-    private final static String API_PARAM_TARGET = "target";
-
     private Context context;
     private AppWidgetManager manager;
     private int id;
@@ -77,9 +72,21 @@ class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
             else
                 pricePaid = 0.0f;
 
+            String baseURL = "";
             try {
-                Uri builtUri = Uri.parse(CRYPTO_CONVERT_BASE_URL)
+                JsonParser jp = new JsonParser();
+                JsonElement root = jp.parse(new InputStreamReader(context.getAssets().open("secrets/config.json")));
+                JsonObject rootobj = root.getAsJsonObject();
+                baseURL = "https://" + rootobj.get("domain").getAsString();
+            } catch (IOException e) {
+                Log.e(TAG, "doInBackground: Could not retrieve API domain from assets.");
+                break;
+            }
+
+            try {
+                Uri builtUri = Uri.parse(baseURL)
                         .buildUpon()
+                        .appendPath("convert")
                         .appendPath(sourceCryptocurrencyName)
                         .appendPath(numberOfCoins.toString())
                         .appendPath(targetCurrencyIdent).build();
