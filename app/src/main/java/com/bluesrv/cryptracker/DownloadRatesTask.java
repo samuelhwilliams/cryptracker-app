@@ -68,7 +68,7 @@ class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
             Log.d(TAG, "doInBackground: " + prefix + "_" + Integer.toString(i) + "_source");
             Log.d(TAG, "doInBackground: " + widgetText.get(prefix + "_" + Integer.toString(i) + "_source"));
 
-            sourceCryptocurrencyName = ((String) widgetText.get(prefix + "_" + Integer.toString(i) + "_source")).toLowerCase();
+            sourceCryptocurrencyName = ((String) widgetText.get(prefix + "_" + Integer.toString(i) + "_source"));
             numberOfCoins = Float.parseFloat((String) widgetText.get(prefix + "_" + Integer.toString(i) + "_amount"));
 
             pricePaidKey = prefix + "_" + Integer.toString(i) + "_paid";
@@ -94,32 +94,23 @@ class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
                 JsonObject rootobj = root.getAsJsonObject();
 
                 coinRate = new HashMap<String, Object>();
-                coinRate.put("coins", rootobj.get(sourceCryptocurrencyName.toLowerCase()).getAsString());
+                coinRate.put("coins", numberOfCoins.toString());
                 coinRate.put("value", rootobj.get(targetCurrencyIdent.toLowerCase()).getAsFloat());
                 coinRate.put("source", sourceCryptocurrencyName);
                 coinRate.put("target", targetCurrencyIdent);
                 coinRate.put("change", ((Float) coinRate.get("value")) - pricePaid);
 
-                Log.d(TAG, "doInBackground1: " + sourceCryptocurrencyName + ", " + root.getAsJsonObject().get(sourceCryptocurrencyName).getAsString());
-
                 publishProgress(coinRate);
-                try {
-                    Thread.sleep(250);
-                } catch (InterruptedException e) {
-                    Log.d(TAG, "doInBackground: WAKE UP.");
-                }
-
-                Log.d(TAG, "doInBackground2: " + sourceCryptocurrencyName + ", " + root.getAsJsonObject().get(sourceCryptocurrencyName).getAsString());
             } catch (MalformedURLException e) {
                 Log.e(TAG, "doInBackground: MalformedURLException " + e.toString());
             } catch (IOException e) {
                 Log.e(TAG, "doInBackground: IOException " + e.toString());
 
                 coinRate = new HashMap<String, Object>();
-                coinRate.put("coins", "0.00");
+                coinRate.put("coins", numberOfCoins.toString());
                 coinRate.put("value", 0.0f);
-                coinRate.put("source", sourceCryptocurrencyName);
-                coinRate.put("target", targetCurrencyIdent);
+                coinRate.put("source", sourceCryptocurrencyName.toUpperCase());
+                coinRate.put("target", targetCurrencyIdent.toUpperCase());
                 coinRate.put("change", 0.0f);
                 publishProgress(coinRate);
             }
@@ -139,7 +130,7 @@ class DownloadRatesTask extends AsyncTask<Integer, Map<String, Object>, Void> {
         RemoteViews widgetRow = new RemoteViews(context.getPackageName(), R.layout.widget_row);
         widgetRow.setTextViewText(R.id.widget_row_source, ((String) result[0].get("coins")) + " " + result[0].get("source"));
         widgetRow.setTextViewText(R.id.widget_row_value, nf.format(result[0].get("value")));
-        widgetRow.setTextViewText(R.id.widget_row_change, "(" + (String) nf.format(result[0].get("change")) + ")");
+        widgetRow.setTextViewText(R.id.widget_row_change, "(" + ((((Float) result[0].get("value")) > 0.0f) ? "+" : "") + nf.format(result[0].get("change")).toString() + ")");
 
         if (Math.signum((Float) result[0].get("change")) < 0) {
             widgetRow.setTextColor(R.id.widget_row_change, context.getResources().getColor(android.R.color.holo_red_dark));
