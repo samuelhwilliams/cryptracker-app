@@ -22,9 +22,10 @@
         <LinearLayout
             android:id="@+id/widget_layout_wrapper"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical"
-            android:clickable="true">
+            android:clickable="true"
+            android:layout_weight="1">
 
         </LinearLayout>
 
@@ -34,7 +35,8 @@
             android:id="@+id/txt_last_updated"
             android:gravity="center_horizontal"
             android:textSize="12dp"
-            android:textColor="@color/accent"/>
+            android:textColor="@color/accent"
+            android:text="Last updated: never"/>
 
     </LinearLayout>
 
