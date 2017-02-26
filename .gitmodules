@@ -1,0 +1,3 @@
+[submodule "app/src/main/assets/secrets"]
+	path = app/src/main/assets/secrets
+	url = git@bitbucket.org:samuelhwilliams/cryptracker-secrets.git
