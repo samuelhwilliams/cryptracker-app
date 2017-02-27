@@ -1,6 +1,6 @@
 # cryptracker-app
 A simple Android widget to track cryptocurrencies current value in a given fiat currency.
 
-![Configuration screen for widget](https://drive.google.com/uc?export=view&id=0BwymAxgfkYAEN3NkaEVEWGtZZGs)
+<img src="https://drive.google.com/uc?export=view&id=0BwymAxgfkYAEN3NkaEVEWGtZZGs" width="320">
 
-![Home screen example for widget](https://drive.google.com/uc?export=view&id=0BwymAxgfkYAETEdRRVdFSU5qZk0)
+<img src="https://drive.google.com/uc?export=view&id=0BwymAxgfkYAETEdRRVdFSU5qZk0" width="320">
